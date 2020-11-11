@@ -1,0 +1,151 @@
+header {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.navbar {
+    padding: 20px 0;
+}
+
+.navbar-dark .navbar-nav .nav-item .nav-link:hover,
+.navbar-dark .navbar-nav .nav-item.active .nav-link {
+    background: black;
+    color: white;
+}
+
+.banner {
+    height: 100vh;
+    width: 100%;
+    background: url('overlay.png'), url('banner.jpeg');
+    background-position: top;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    background-repeat: no-repeat;
+}
+
+.contentHome {
+    color: aliceblue;
+}
+
+.child {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5em;
+    margin: 0 auto;
+    float: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+    -webkit-transform: translate(0%, -50%);
+}
+.banner .child #getStarted{
+    color: aliceblue;
+    transition-duration: 0.4s;
+    border: 2px solid #4CAF50; /* Green */
+}
+.banner .child #getStarted:hover{
+    background-color: #4CAF50;
+}
+#fieldform{
+    width: 33%;
+    margin:auto;
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 33.3%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  filter: grayscale(1) brightness(0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.column img:hover {
+  filter: grayscale(0);
+}
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+  .column img {
+    filter: grayscale(0) brightness(1);
+  }
+}
+.gallery .column img{
+    cursor: pointer;
+}
+#lightbox{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    display: none;
+}
+
+#lightbox.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editbutton{
+    text-align: center;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+}
+.toolbox_bottom{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width:30vw;
+    position: absolute;
+    left:50%;
+    float: left;
+    transform: translateX(-50%);
+}
+
+
+.main-left aside h3 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.main-left p {
+  margin-bottom: 15px;
+}
+.main-left label {
+  color: #fff;
+  display: block;
+  padding-bottom: 10px;
+}

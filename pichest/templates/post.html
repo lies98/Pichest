@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="banner">
+        <div class="contentHome child">
+            <div class="main-left">
+                <aside>
+                    <h3>Image Filters</h3>
+                    <form id="slider-form">
+                        <p>
+                            <label for="gs">Grayscale</label>
+                            <input id="gs" name="gs" type="range" min="" max="100" value="0" class="slider">
+                        </p>
+
+                        <p>
+                            <label for="blur">Blur</label>
+                            <input id="blur" name="blur" type="range" min="0" max="" value="0" class="slider">
+                        </p>
+
+                        <p>
+                            <label for="hue-rotate">Hue-Rotate</label>
+                            <input id="hue-rotate" name="hue-rotate" type="range" min="0" max="" value="0"
+                                   class="slider">
+                        </p>
+
+                        <p>
+                            <label for="sepia">Sepia</label>
+                            <input id="sepia" name="sepia" type="range" min="0" max="" value="0" class="slider">
+                        </p>
+                    </form>
+                </aside>
+            </div>
+            <div>
+                <img id="myImage" src="{{ url_for('static', filename='posts/' + post.content) }}">
+            </div>
+            <div class="toolbox_bottom">
+                <button id="saveImages" class="btn btn-outline-warning">save</button>
+                <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST">
+                    <input class="btn btn-danger" type="submit" value="Delete">
+                </form>
+            </div>
+            <canvas id="canvas" width="400px" height="400px" style="display: none"></canvas>
+        </div>
+    </div>
+{% endblock content %}
